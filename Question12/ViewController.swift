@@ -14,6 +14,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func pushButton(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let pushScreen = storyboard.instantiateViewController(withIdentifier: "PushVC") as? PushVC{
+            
+            navigationController?.pushViewController(pushScreen, animated: true)
+        }
+        
+        
+    }
+    
+    @IBAction func presentButton(_ sender: UIButton) {
+        
+        let screen = PresentVC()
+        present(screen, animated: true)
+    }
 }
 
